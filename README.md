@@ -1,2 +1,35 @@
-# Hybrid-Minkowski-Logcosh-Loss-LSTM
-Robust LSTM forecasting model using the Hybrid Minkowski-Log-Cosh (MLC) loss function for time series prediction under clean and noisy conditions. Includes code, datasets, and results from our malaria forecasting study in Oti region (Ghana). Implements tunable loss control via the p exponent for enhanced generalization and outlier resistance.
+# Hybrid-Minkowski-LogCosh-Loss-LSTM
+
+A robust LSTM forecasting framework leveraging the **Hybrid Minkowski-LogCosh (MLC) loss function** for **time series prediction** under both clean and noisy conditions.  
+This repository includes code, datasets, and results from our **malaria forecasting study in the Oti Region (Ghana)**.  
+
+The proposed loss introduces a tunable **Minkowski exponent `p`** that improves **generalization** and enhances **resilience to outliers**.
+
+---
+
+## 📂 Project Files
+
+### 1. `Confirmed_notebook.ipynb`
+Trains an **LSTM model on the confirmed malaria case variable** from the **original climate-malaria dataset**.  
+- Evaluates performance under clean conditions.  
+- Employs **GridSearch** to tune the **Minkowski-LogCosh loss** hyperparameters.  
+
+### 2. `Confirmed_outliers_notebook.ipynb`
+Trains an **LSTM model on a modified dataset** where artificial outliers were injected into the confirmed malaria case variable.  
+- Designed to test the robustness of the model under noisy data conditions.  
+- Also uses **GridSearch** to optimize the MLC loss across different values of the Minkowski exponent.  
+
+### 3. `merged_climate_malaria_data.csv`
+The complete **climate-malaria dataset**, including:  
+- The **confirmed malaria case variable** (target).  
+- Additional climate-related variables.  
+- Extended features not directly used in this study but available for further experimentation.  
+
+---
+
+## 🔬 Summary of Experiments
+
+Both notebooks implement LSTM forecasting with the **Hybrid MLC loss function**.   
+
+- **`Confirmed_notebook.ipynb`** → LSTM trained on **cleaned data**.  
+- **`Confirmed_outliers_notebook.ipynb`** → LSTM trained on **noisy  data**. 
